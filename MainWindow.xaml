@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BinImageViewer"
         mc:Ignorable="d"
-        Title="Kastle Bin Image Data Viewer"
+        Title="Kastle Binary Image Data Viewer"
         WindowStartupLocation="CenterScreen"
-        MinWidth="800"
-        MinHeight="300">
+        MinWidth="600"
+        MinHeight="300"
+        SizeToContent="WidthAndHeight">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />

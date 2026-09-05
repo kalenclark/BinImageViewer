@@ -43,7 +43,7 @@ namespace BinImageViewer
 
             var dialog = new OpenFileDialog()
             {
-                Filter = "*.bin",
+                Filter = "Binary File(*.bin)|*.bin",
             };
             var res = dialog.ShowDialog(Application.Current.MainWindow);
             if (res is null || !(bool)res) {
