@@ -1,0 +1,60 @@
+﻿<Window x:Class="BinImageViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BinImageViewer"
+        mc:Ignorable="d"
+        Title="Kastle Bin Image Data Viewer"
+        WindowStartupLocation="CenterScreen"
+        MinWidth="800"
+        MinHeight="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Grid.Row="0" Grid.Column="0" Margin="0 0 10 0">
+            <StackPanel DockPanel.Dock="Top" Margin="0 0 0 5">
+                <TextBlock Text="Raw Data" HorizontalAlignment="Center" />
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <Button x:Name="UIOpenButton" Content="Open" Click="UIOpenButton_Click" />
+                </StackPanel>
+
+                <Separator />
+
+                <TextBlock Text="Raw Data Info" HorizontalAlignment="Center" />
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <RadioButton x:Name="UIColorFormatOpt1" GroupName="ImageFormat" Content="RGBA" IsChecked="True" Checked="OnColorFormatChanged" />
+                    <RadioButton x:Name="UIColorFormatOpt2" GroupName="ImageFormat" Content="BGRA" Checked="OnColorFormatChanged" />
+                    <RadioButton x:Name="UIColorFormatOpt3" GroupName="ImageFormat" Content="RGB" Checked="OnColorFormatChanged" />
+                    <RadioButton x:Name="UIColorFormatOpt4" GroupName="ImageFormat"  Content="BGR" Checked="OnColorFormatChanged" />
+                </StackPanel>
+
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Left" Text="Width:" Width="40" TextAlignment="Right" Margin="0 0 3 0" />
+                    <TextBox x:Name="UIWidthInput" InputScope="Number" />
+                </DockPanel>
+
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Left" Text="Height:" Width="40" TextAlignment="Right" Margin="0 0 3 0" />
+                    <TextBox x:Name="UIHeightInput" InputScope="Number" />
+                </DockPanel>
+            </StackPanel>
+        </DockPanel>
+
+        <Image Grid.Row="0" Grid.Column="1" x:Name="UIImage" Stretch="None"/>
+
+        <StatusBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <TextBlock x:Name="UIStatusText" Text="Ready" />
+        </StatusBar>
+    </Grid>
+</Window>
