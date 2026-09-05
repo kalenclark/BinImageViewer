@@ -75,8 +75,15 @@ jobs:
 
     - name: Test (if any)
       run: |
-        set -e
-        dotnet test --no-build --verbosity normal || echo "No tests or tests failed"
+        # Use PowerShell on Windows runners. Stop on unexpected errors.
+        $ErrorActionPreference = 'Stop'
+        $testProjects = Get-ChildItem -Recurse -Filter *.Tests.csproj -ErrorAction SilentlyContinue
+        if ($testProjects) {
+          dotnet test --no-build --verbosity normal
+        } else {
+          Write-Host "No test projects found; skipping tests"
+        }
+      shell: pwsh
 
     - name: Publish (Release only)
       if: matrix.configuration == 'Release'
