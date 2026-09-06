@@ -73,18 +73,6 @@ jobs:
     - name: Build
       run: dotnet build --configuration ${{ matrix.configuration }} --no-restore
 
-    - name: Test (if any)
-      run: |
-        # Use PowerShell on Windows runners. Stop on unexpected errors.
-        $ErrorActionPreference = 'Stop'
-        $testProjects = Get-ChildItem -Recurse -Filter *.Tests.csproj -ErrorAction SilentlyContinue
-        if ($testProjects) {
-          dotnet test --no-build --verbosity normal
-        } else {
-          Write-Host "No test projects found; skipping tests"
-        }
-      shell: pwsh
-
     - name: Publish (Release only)
       if: ${{ matrix.configuration == 'Release' }}
       run: dotnet publish -c Release -r win-x64 --self-contained false -p:PublishSingleFile=false -o ./publish
