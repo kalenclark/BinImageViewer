@@ -28,7 +28,7 @@ namespace BinImageViewer
             InitializeComponent();
         }
 
-        private void UIFlipWHButton_Click(object sender, RoutedEventArgs e)
+        private void UISwapWHButton_Click(object sender, RoutedEventArgs e)
         {
             (UIHeightInput.Text, UIWidthInput.Text) = (UIWidthInput.Text, UIHeightInput.Text);
         }

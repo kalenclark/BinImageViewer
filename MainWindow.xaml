@@ -9,6 +9,7 @@
         WindowStartupLocation="CenterScreen"
         MinWidth="600"
         MinHeight="300"
+        FontSize="14"
         SizeToContent="WidthAndHeight">
     <Grid>
         <Grid.RowDefinitions>
@@ -41,13 +42,13 @@
                 </StackPanel>
 
                 <DockPanel>
-                    <TextBlock DockPanel.Dock="Left" Text="Width:" Width="40" TextAlignment="Right" Margin="0 0 3 0" />
-                    <TextBox x:Name="UIWidthInput" InputScope="Number" />
+                    <TextBlock DockPanel.Dock="Left" Text="Width:" Width="50" TextAlignment="Right" Margin="0 0 3 0" />
+                    <TextBox x:Name="UIWidthInput" MaxLines="1" />
                 </DockPanel>
 
                 <DockPanel>
-                    <TextBlock DockPanel.Dock="Left" Text="Height:" Width="40" TextAlignment="Right" Margin="0 0 3 0" />
-                    <TextBox x:Name="UIHeightInput" InputScope="Number" />
+                    <TextBlock DockPanel.Dock="Left" Text="Height:" Width="50" TextAlignment="Right" Margin="0 0 3 0" />
+                    <TextBox x:Name="UIHeightInput" MaxLines="1" />
                 </DockPanel>
 
                 <Button x:Name="UISwapWHButton" Content="Swap width and height" Click="UISwapWHButton_Click" />
