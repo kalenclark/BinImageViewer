@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
 using System.Windows.Media;
@@ -25,6 +26,11 @@ namespace BinImageViewer
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void UIFlipWHButton_Click(object sender, RoutedEventArgs e)
+        {
+            (UIHeightInput.Text, UIWidthInput.Text) = (UIWidthInput.Text, UIHeightInput.Text);
         }
 
         private void UIOpenButton_Click(object sender, RoutedEventArgs e)
