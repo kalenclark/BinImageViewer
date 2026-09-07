@@ -49,8 +49,6 @@
                     <TextBlock DockPanel.Dock="Left" Text="Height:" Width="40" TextAlignment="Right" Margin="0 0 3 0" />
                     <TextBox x:Name="UIHeightInput" InputScope="Number" />
                 </DockPanel>
-
-                <Button x:Name="UIFlipWHButton" Content="Flip width and height" Click="UIFlipWHButton_Click" />
             </StackPanel>
         </DockPanel>
 
