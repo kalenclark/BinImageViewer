@@ -112,10 +112,5 @@ namespace BinImageViewer
                 _ColorFormat = EColorFormat.BGR;
             }
         }
-
-        private void UIFlipWHButton_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
